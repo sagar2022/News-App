@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Spinner from './component/Spinner';
 import NewsItems from './NewsItems'
+import PropTypes from 'prop-types'
 
 export class News extends Component {
     articles = [
@@ -112,6 +114,7 @@ export class News extends Component {
         return (
             <div className="container my-3">
                 <h2 className="text-center">News-Express- Top Headlines</h2>
+                <Spinner />
                 <div className="row">
                     {this.state.articles.map((element)=>{
                       return <div className="col-md-4" key={element.url}>
@@ -127,6 +130,21 @@ export class News extends Component {
         )
     }
 }
+
+
+
+News.defaultProps = {
+    country: 'in',
+    pageSize: 8,
+    category: 'general',
+}
+
+News.protoTypes = {
+    country: PropTypes.string,
+    pageSize: PropTypes.number,
+    category: PropTypes.string,
+}
+
 
 export default News;
                 
