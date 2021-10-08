@@ -4,9 +4,11 @@ import React, { Component } from 'react'
 import Navbar from './Navbar';
 import News from './News';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { LoadingBar } from 'react-redux-loading-bar';
+import {LoadingBar} from 'react-redux-loading-bar';
 
 export default class App extends Component {
+  pageSize = 6;
+
   state = {
     progress:0
   }
@@ -22,7 +24,7 @@ export default class App extends Component {
       <Navbar/> 
       <LoadingBar
       height={3}
-      color='#ffc107'
+      color='#f11946'
       progress = {this.state.progress}
       />
       <Switch>
